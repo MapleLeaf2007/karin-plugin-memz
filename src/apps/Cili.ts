@@ -28,10 +28,14 @@ export const magnetSearch = karin.command(/^#?磁力搜索\s*(.+)/, async (e) =>
     }
 
     if (results.length > 0) {
-      for (const result of results) {
-        const message = `名称: ${result.title}\n文件大小: ${result.size}\n下载链接: ${result.link}`
-        await e.reply(message, { at: true, recallMsg: 0, reply: true })
-      }
+      const forwardMessage = results
+        .map(
+          (row) =>
+            `名称: ${row.title}\n文件大小: ${row.size}\n下载链接: ${row.link}`
+        )
+        .join('\n\n')
+
+      await e.reply(forwardMessage)
     } else {
       await e.reply('未找到匹配的资源。', { at: true, recallMsg: 0, reply: true })
     }
@@ -40,4 +44,9 @@ export const magnetSearch = karin.command(/^#?磁力搜索\s*(.+)/, async (e) =>
   }
 
   return true
+}, {
+  priority: 9999,
+  log: true,
+  name: '磁力搜索',
+  permission: 'all',
 })
