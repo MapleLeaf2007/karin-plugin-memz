@@ -15,7 +15,7 @@ export const sendMsg = karin.command(/^#测试主动消息$/, async (e) => {
   const message = segment.text('\n这是一条主动消息，10秒后自动撤回~')
 
   /** 发送消息 */
-  const { message_id } = await Bot.sendMsg(uid, contact, message, { recallMsg: 10 })
+  const { message_id } = await Bot.sendMsg(uid, contact, [message], { recallMsg: 10 })
 
   /** 打印返回的消息ID */
   console.log(`发送成功，消息ID：${message_id}`)

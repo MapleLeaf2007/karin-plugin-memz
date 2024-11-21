@@ -1,16 +1,16 @@
 {
-  "name": "karin-plugin-template-ts",
+  "name": "karin-plugin-memz",
   "version": "0.0.1",
-  "author": "Lain",
+  "author": "MapleLeaf",
   "type": "module",
-  "description": "karin plugin template",
-  "homepage": "https://github.com/KarinJS/karin-plugin-template-ts",
+  "description": "Karin的工具类插件",
+  "homepage": "https://github.com/MapleLeaf2007/karin-plugin-memz",
   "bugs": {
-    "url": "https://github.com/KarinJS/karin-plugin-template-ts/issues"
+    "url": "https://github.com/MapleLeaf2007/karin-plugin-memz/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KarinJS/karin-plugin-template-ts.git"
+    "url": "git+https://github.com/MapleLeaf2007/karin-plugin-memz.git"
   },
   "scripts": {
     "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
