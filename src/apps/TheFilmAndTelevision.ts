@@ -1,12 +1,12 @@
 import { karin, common, segment } from 'node-karin'
 export const magnetSearch = karin.command(/^#?搜影视\\s*(\\S+)$/,
-    async (e) => await TheFilmAndTelevision(e), {
+  async (e) => await TheFilmAndTelevision(e), {
     priority: 9999,
     log: true,
     name: '搜影视',
     permission: 'all',
-})
-async function TheFilmAndTelevision(e:any) {
+  })
+async function TheFilmAndTelevision (e:any) {
   const match = e.msg.match(/^#?搜影视\s*(\\S+)$/)
   const keyword = match ? match[1] : null
 
@@ -17,11 +17,11 @@ async function TheFilmAndTelevision(e:any) {
   try {
     const results = await searchResources(keyword)
     if (results.length > 0) {
-        const forward = results.map((row:any) =>
-            segment.text(`名称: ${row.title}\n文件大小: ${row.size}\n下载链接: ${row.link}`)
-          );
+      const forward = results.map((row:any) =>
+        segment.text(`名称: ${row.title}\n文件大小: ${row.size}\n下载链接: ${row.link}`)
+      )
       const msg = common.makeForward(forward, e.self_id, e.bot.account.name)
-      await e.bot.sendForwardMessage(e.contact, msg);
+      await e.bot.sendForwardMessage(e.contact, msg)
     } else {
       await e.reply('未找到匹配的结果。', true)
     }
@@ -30,7 +30,7 @@ async function TheFilmAndTelevision(e:any) {
   }
 }
 
-async function searchResources(keyword: string) {
+async function searchResources (keyword: string) {
   const apiUrl = `https://ysxjjkl.souyisou.top/api_searchtxt.php?name=${encodeURIComponent(keyword)}`
 
   try {
