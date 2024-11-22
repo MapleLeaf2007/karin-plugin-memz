@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0 (2024-11-22)
+
+
+### Bug Fixes
+
+* 为什么不玩原神 ([0f96db4](https://github.com/MapleLeaf2007/karin-plugin-memz/commit/0f96db4f70d17de84a7dca2258e8b0285fefb42f))
+* 优化代码格式和风格 ([c53b273](https://github.com/MapleLeaf2007/karin-plugin-memz/commit/c53b273ff76016f0391d1746221c715352609254))
+
 ## [1.0.2](https://github.com/KarinJS/karin-plugin-template/compare/v1.0.1...v1.0.2) (2024-07-20)
 
 
