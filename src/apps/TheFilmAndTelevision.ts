@@ -7,7 +7,7 @@ export const magnetSearch = karin.command(/^#?搜影视\\s*(\\S+)$/,
     permission: 'all',
 })
 async function TheFilmAndTelevision(e:any) {
-  const match = e.msg.match(/^#?搜影视\s*(\S+)$/)
+  const match = e.msg.match(/^#?搜影视\s*(\\S+)$/)
   const keyword = match ? match[1] : null
 
   if (!keyword) {
