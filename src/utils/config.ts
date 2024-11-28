@@ -59,7 +59,7 @@ class Cfg {
       try {
         if (!yaml.has(key)) yaml.set(key, val)
       } catch (error: any) {
-        logger.error(`[common] 更新yaml文件时出错：${error.stack || error.message || error}`)
+        logger.error(`[karin-plugin-memz] 更新yaml文件时出错：${error.stack || error.message || error}`)
       }
     })
     /** 先保存 */
@@ -71,7 +71,7 @@ class Cfg {
       try {
         yaml.comment(key, comment, type)
       } catch (error: any) {
-        logger.error(`[common] 更新yaml文件时出错：${error.stack || error.message || error}`)
+        logger.error(`[karin-plugin-memz] 更新yaml文件时出错：${error.stack || error.message || error}`)
       }
     })
     yaml.save()
